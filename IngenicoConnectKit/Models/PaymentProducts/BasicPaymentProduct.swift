@@ -13,10 +13,12 @@ public class BasicPaymentProduct: Equatable, BasicPaymentItem, ResponseObjectSer
     public var identifier: String
     public var displayHints: PaymentItemDisplayHints
     public var accountsOnFile = AccountsOnFile()
+    public var acquirerCountry: String?
     
     public var allowsTokenization = false
     public var allowsRecurring = false
     public var autoTokenized = false
+    public var allowsInstallments = false
     
     public var paymentMethod: String
     public var paymentProductGroup: String?
@@ -60,8 +62,13 @@ public class BasicPaymentProduct: Equatable, BasicPaymentItem, ResponseObjectSer
         self.identifier = "\(identifier)"
         self.paymentMethod = paymentMethod
         self.displayHints = displayHints
+        self.acquirerCountry = json["acquirerCountry"] as? String ?? ""
 
+        allowsTokenization = json["allowsTokenization"] as? Bool ?? false
         allowsRecurring = json["allowsRecurring"] as? Bool ?? false
+        autoTokenized = json["autoTokenized"] as? Bool ?? false
+        allowsInstallments = json["allowsInstallments"] as? Bool ?? false
+
         paymentProductGroup = json["paymentProductGroup"] as? String
 
         if let input = json["accountsOnFile"] as? [[String: Any]] {
@@ -71,8 +78,7 @@ public class BasicPaymentProduct: Equatable, BasicPaymentItem, ResponseObjectSer
                 }
             }
         }
-        
-        allowsTokenization = json["allowsTokenization"] as? Bool ?? false
+
     }
     
     public func accountOnFile(withIdentifier identifier: String) -> AccountOnFile? {

@@ -36,7 +36,8 @@ public class C2SCommunicator {
             "X-GCS-ClientMetaInfo" : base64EncodedClientMetaInfo
         ]
     }
-    
+
+    @available(*, deprecated, message: "This function is dependant on Environment, and will therefore be removed.")
     public var isEnvironmentTypeProduction: Bool {
         return configuration.environment == .production ? true : false
     }
@@ -307,11 +308,9 @@ public class C2SCommunicator {
                                  success: @escaping (_ iinDetailsResponse: IINDetailsResponse) -> Void,
                                  failure: @escaping (_ error: Error) -> Void) {
         let URL = "\(baseURL)/\(configuration.customerId)/services/getIINdetails"
-        let max = min(partialCreditCardNumber.count, 6)
-        let trimmedPartialCreditCardNumber = String(partialCreditCardNumber[..<partialCreditCardNumber.index(partialCreditCardNumber.startIndex, offsetBy: max)])
-        
+
         var parameters: [String: Any] = [:]
-        parameters["bin"] = trimmedPartialCreditCardNumber
+        parameters["bin"] = getIINDigitsFrom(partialCreditCardNumber: partialCreditCardNumber)
 
         if let context = context {
             var paymentContext: [String: Any] = [:]
@@ -337,6 +336,16 @@ public class C2SCommunicator {
         }, failure: { error in
             failure(error)
         })
+    }
+
+    func getIINDigitsFrom(partialCreditCardNumber: String) -> String {
+        let max: Int
+        if partialCreditCardNumber.count >= 8 {
+            max = 8
+        } else {
+            max = min(partialCreditCardNumber.count, 6)
+        }
+        return String(partialCreditCardNumber[..<partialCreditCardNumber.index(partialCreditCardNumber.startIndex, offsetBy: max)])
     }
     
     public func convert(amountInCents: Int, source: CurrencyCode, target: CurrencyCode, success: @escaping (_ convertedAmountInCents: Int) -> Void, failure: @escaping (_ error: Error?) -> Void) {

@@ -73,9 +73,9 @@
 	<key>pp_logo_302</key>
 	<string>templates/master/global/css/img/ppimages/pp_logo_302_v1.png</string>
 	<key>pp_logo_320</key>
-	<string>templates/master/global/css/img/ppimages/pp_logo_320_v1.png</string>
+	<string>templates/master/global/css/img/ppimages/pp_logo_320_v3.png</string>
 	<key>pp_logo_402</key>
-	<string>templates/master/global/css/img/ppimages/pp_logo_402_v1.png</string>
+	<string>templates/master/global/css/img/ppimages/pp_logo_402_v2.png</string>
 	<key>pp_logo_420</key>
 	<string>templates/master/global/css/img/ppimages/pp_logo_420_v1.png</string>
 	<key>pp_logo_430</key>
@@ -103,9 +103,9 @@
 	<key>pp_logo_805</key>
 	<string>templates/master/global/css/img/ppimages/pp_logo_805_v1.png</string>
 	<key>pp_logo_806</key>
-	<string>templates/master/global/css/img/ppimages/pp_logo_806_v1.png</string>
+	<string>templates/master/global/css/img/ppimages/pp_logo_806_v2.png</string>
 	<key>pp_logo_809</key>
-	<string>templates/master/global/css/img/ppimages/pp_logo_809_v1.png</string>
+	<string>templates/master/global/css/img/ppimages/pp_logo_809_v2.png</string>
 	<key>pp_logo_810</key>
 	<string>templates/master/global/css/img/ppimages/pp_logo_810_v1.png</string>
 	<key>pp_logo_816</key>
@@ -126,6 +126,8 @@
 	<string>templates/master/global/css/img/ppimages/pp_logo_861_v2.png</string>
 	<key>pp_logo_863</key>
 	<string>templates/master/global/css/img/ppimages/pp_logo_863_v1.png</string>
+	<key>pp_logo_865</key>
+    <string>templates/master/global/css/img/ppimages/pp_logo_865_v1.png</string>
 	<key>pp_logo_869</key>
 	<string>templates/master/global/css/img/ppimages/pp_logo_869_v1.png</string>
 	<key>pp_logo_870</key>
@@ -163,7 +165,7 @@
 	<key>pp_logo_1526</key>
 	<string>templates/master/global/css/img/ppimages/pp_logo_1526_v1.png</string>
 	<key>pp_logo_3012</key>
-	<string>templates/master/global/css/img/ppimages/pp_logo_3012_v1.png</string>
+	<string>templates/master/global/css/img/ppimages/pp_logo_3012_v2.png</string>
 	<key>pp_logo_3130</key>
 	<string>templates/master/global/css/img/ppimages/pp_logo_3130_v1.png</string>
 	<key>pp_logo_3131</key>
